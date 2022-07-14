@@ -60,7 +60,7 @@ public class RetailPageObject extends Base{
 	private WebElement AboutUsCheckBox;
 	
 	@FindBy(xpath = "//input[@type='submit']")
-	private WebElement continueButton;
+	private WebElement continueButton1;
 	
 	@FindBy(xpath = "//div[text()=' Success: Your account has been successfully updated.']")
 	private WebElement successMessage1;
@@ -68,7 +68,7 @@ public class RetailPageObject extends Base{
 	//2nd scenario
 	
 	@FindBy(xpath = "//a[text()='Edit your affiliate information']")
-	private WebElement afiliateInformationLink;
+	private WebElement affiliateInformationLink;
 	
 	@FindBy(xpath ="//input[@value='bank']")
 	private WebElement bankBox;
@@ -83,13 +83,13 @@ public class RetailPageObject extends Base{
 	private WebElement swiftNumber;
 	
 	@FindBy(xpath = "//input[@id='input-bank-account-name']")
-	private WebElement AccName;
+	private WebElement accName;
 	
 	@FindBy(xpath = "//input[@id='input-bank-account-number']")
-	private WebElement AccNumber;
+	private WebElement accNumber;
 	
 	@FindBy(xpath = "//input[@type='submit']")
-	private WebElement continueButton1;
+	private WebElement continueButton2;
 	
 	@FindBy(xpath = "//div[text()=' Success: Your account has been successfully updated.']")
 	private WebElement successMessage2;
@@ -112,7 +112,7 @@ public class RetailPageObject extends Base{
 	private WebElement inputTelephone;
 	
 	@FindBy(xpath = "//input[@type='submit']")
-	private WebElement continueButton2;
+	private WebElement continueButton3;
 	
 	@FindBy(xpath = "//div[@class='alert alert-success alert-dismissible']")
 	private WebElement successMessage3;
@@ -139,8 +139,8 @@ public class RetailPageObject extends Base{
 		loginOption.click();
 	}
 	
-	public void emailPasswordInput(String email, String password){
-		emailInput.sendKeys(email);
+	public void emailPasswordInput(String userName, String password){
+		emailInput.sendKeys(userName);
 		passwordInput.sendKeys(password);
 	}
 	
@@ -151,20 +151,132 @@ public class RetailPageObject extends Base{
 	public boolean isAccDashboardPresent(){
 		if(accountDashboard.isDisplayed())
 			return true;
-		else return false;
+		else 
+			return false;
 	}
 	
-	//1st scneario
+	//1st scenario methods
 	
 	public void clickOnAffiliateAccLink(){
 		affiliateAccountLink.click();
 	}
 	
-	public void enterAffiliateInformation(){
+	public void companyInput(String companyValue){
+		companyEntry.sendKeys(companyValue);
+	}
+	
+	public void websiteInput(String websiteValue){
+		websiteEntry.sendKeys(websiteValue);
+	}
+	
+	public void taxIdnput(String taxIdValue){
+		taxIDentry.sendKeys(taxIdValue);
+	}
+	
+	public void clickOnChequeBox(){
+		chequeBox.click();
+	}
 		
+		
+	public void payeeNameInput(String payeeName){
+		ChequePayeeName.sendKeys(payeeName);
 	}
 	
 	
+	
+	
+	public void clickOnAboutUsBox(){
+		AboutUsCheckBox.click();
+	}
+	
+	public void clickOnContinueButton1(){
+		continueButton1.click();
+	}
+	
+	public boolean successMessageIsPresent1(){
+		if(successMessage1.isDisplayed())
+			return true;
+		else
+			return false;
+	}
+	
+	//2nd scenario methods
+	
+	public void clickOnEditAffiliateAccLink(){
+		affiliateInformationLink.click();
+	}
+	
+	public void clickOnBankBox(){
+		bankBox.click();
+	}
+	
+	public void enterBankName(String bankName){
+		bankNameInput.sendKeys(bankName);
+	}
+	
+	public void enterBranchNumber(String abaNumber){
+		branchNumber.sendKeys(abaNumber);
+	}
+	
+	public void enterSwiftNumber(String swiftCode){
+		swiftNumber.sendKeys(swiftCode);
+	}
+	
+	public void enterAccName(String accountName){
+		accName.sendKeys(accountName);
+	}
+	
+	public void enterAccNumber(String accountNumber){
+		accNumber.sendKeys(accountNumber);
+	}
+	
+	public void clickOnContinueButton2(){
+		continueButton2.click();
+	}
+	
+	public boolean successMessageIsPresent2(){
+		if(successMessage2.isDisplayed())
+			return true;
+		else
+			return false;
+			}
+	
+	//3rd scenario methods
+	
+	public void clickOnEditAccInformationLink(){
+		accInfoLink.click();
+	}
+	
+	public void enterFirstName(String firstname){
+		inputFirstName.sendKeys(firstname);
+	}
+	
+	public void enterLastName(String lastName){
+		inputLastName.sendKeys(lastName);
+	}
+	
+	public void enterEmailValue(String email){
+		inputEmail.sendKeys(email);
+	}
+	
+	public void enterTelValue(String telephone){
+		inputTelephone.sendKeys(telephone);
+	}
+	
+	public void clickOnContinueButton3(){
+		continueButton3.click();
+	}
+	public boolean isSuccessMessage3Present(){
+		if(successMessage3.isDisplayed())
+			return true;
+		else 
+			return false;
+	}
+	
+	public String getSuccessMessage(){
+		return successMessage3.getText();
+		
+	}
 	
 	
 	
